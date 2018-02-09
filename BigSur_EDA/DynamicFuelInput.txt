@@ -1,0 +1,23 @@
+LandisData  "Dynamic Fuel System"
+
+Timestep  1
+
+HardwoodMaximum     35
+
+DeadFirMaxAge   0
+
+FuelTypes
+>>	Base	Age	Species
+>> Type	Fuel	Range	-------
+5	Conifer	0 to 1000	Pinumono Pinuatte Pinucoul Pinulamb Pinuradi Pinusabi
+7	Conifer	100 to 1350	Abiebrac Abiegran Pinupond Pseumacr Pseumenz
+8	Deciduous	0 to 600	Acermacr Aesccali Alnurhom Alnurubr Arbumenz Platrace Popubals Queragri Querchry Querdoug Quergarr Querkell Querloba Querwisl Umbecali
+9	Conifer	0 to 1000	Sequsemp
+10	Conifer	1000 to 2200	Sequsemp
+16	Open	0 to 100	Abiebrac Abiegran Pinupond Pseumacr Pseumenz
+
+DisturbanceConversionTable
+
+MapFileNames            fire/FuelType-{timestep}.img
+PctConiferFileName   fire/PctConifer-{timestep}.img
+PctDeadFirFileName  fire/PctDeadFir-{timestep}.img

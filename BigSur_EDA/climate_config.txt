@@ -1,0 +1,11 @@
+LandisData  "Climate Config"
+
+>>-----daily
+
+ClimateTimeSeries                 Daily_RandomYears
+ClimateFile                       future.csv
+ClimateFileFormat                 Daily_Temp-C_Precip-mmDay
+
+SpinUpClimateTimeSeries           Daily_RandomYears
+SpinUpClimateFile                 historical.csv
+SpinUpClimateFileFormat           Daily_Temp-C_Precip-mmDay

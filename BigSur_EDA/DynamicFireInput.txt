@@ -1,0 +1,61 @@
+LandisData  "Dynamic Fire System"
+
+Timestep  1
+EventSizeType   size_based
+
+BuildUpIndex   yes
+WeatherRandomizer   0
+
+>> Fire Sizes (parameters applied for both size and duration based)
+>>Eco	Eco	Mu	Sigma	Max	Spring	Spring.1	Spring.2	Summer	Summer.1	Summer.2	Fall	Fall.1	Fall.2	DefOpen	Number
+>>Code	name			Size	FMCLow	FMCHigh	HighPr	FMCLow	FMCHigh	HighPr	FMCLow	FMCHigh	HighPr	FuelTyp	ignites
+>>-----	-------	-------	-------	-------	-------	-------	-------	-------	-------	-------	-------	-------	-------	-------	-------
+1	BigSur	360	110	35000	85	120	0.5	85	110	0.5	85	100	0.5	16	30
+
+InitialFireEcoregionsMap  BigSurFireRegions.img
+DynamicEcoregionTable
+
+SeasonTable
+>>	 	Prop	Percent	DayLen
+>> Name	status	Fire	Curing	Prop
+Spring	LeafOff	0.1	0	1
+Summer	LeafOn	0.9	50	1
+Fall	LeafOff	0	100	1
+
+InitialWeatherDatabase   FireWeatherDatabase.csv
+DynamicWeatherTable
+
+FuelTypeTable
+>>	Base	Surface	Ignite	a	b	c	q	BUI	maxBE	CBH
+>>	NA	Type	Prob	a	b	c	q	BUI	maxBE	CBH
+1	Conifer	C1	0.1	90	0.0649	4.5	0.9	72	1.076	2
+2	Conifer	C2	0.1	110	0.0282	1.5	0.7	64	1.321	3
+3	Conifer	C3	0.1	110	0.0444	3	0.75	62	1.261	8
+4	Conifer	C4	0.1	110	0.0293	1.5	0.8	66	1.184	4
+5	Conifer	C5	0.1	30	0.0697	4	0.8	56	1.22	18
+6	Conifer	C6	0.1	30	0.08	3	0.8	62	1.197	62
+7	Conifer	C7	0.1	45	0.0305	2	0.85	106	1.134	10
+8	Deciduous	D1	0.1	30	0.0232	1.6	0.9	32	1.179	0
+9	Conifer	M1	0.1	0	0	0	0.8	50	1.25	0
+10	Conifer	M2	0.1	0	0	0	0.8	50	1.25	6
+11	Conifer	M3	0.1	0	0	0	0.8	50	1.25	6
+12	Conifer	M4	0.1	0	0	0	0.8	50	1.25	6
+13	Slash	S1	0.1	75	0.0297	1.3	0.75	38	1.46	0
+14	Slash	S2	0.1	40	0.0438	1.7	0.75	63	1.256	0
+15	Slash	S3	0.1	55	0.0829	3.2	0.75	31	1.59	0
+16	Open	O1a	0.1	190	0.031	1.4	1	1	1	0
+17	Open	O1b	0.1	250	0.035	1.7	1	1	1	0
+
+SeverityCalibrationFactor  1.0
+FireDamageTable
+>>	FireSev
+>>%oLon	FireTol
+>>-----	-----
+20%	-2
+50%	-1
+85%	0
+100%	1
+
+MapNames        fire/severity-{timestep}.img
+LogFile         fire/log.csv
+SummaryLogFile  fire/summary-log.csv
