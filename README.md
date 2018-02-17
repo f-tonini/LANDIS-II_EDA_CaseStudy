@@ -21,6 +21,8 @@ Please follow these steps for installation and running the model (__NOTE: needs 
     1. Double click on __SimpleBatchFile.bat__ to start running the model.
     2. Model will take ~3 days running on a computer with multiple cores or more with a single core. Note that the default for the model is use all CPUs so we recommend running this on a virtual machine.
 
+3. Once the model has finished running, open the EDA_Accurracy_Analysis.R and change the directory in setwd() on line 6 to the location of the LandisII_EDA_Example folder. 
+
 <img src="img/Fig2.jpg" height="600">
 
 ## Credits and Contacts
